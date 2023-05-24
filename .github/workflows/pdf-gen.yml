@@ -1,0 +1,69 @@
+name: tag-release-pdf
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tag:
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: 
+          - 12
+      outputs:
+        new_tag: ${{ steps.new_tag.outputs.tag }}
+      steps: 
+        - uses: phish108/autotag-action@v1.1.55
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            with-v: true
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0 # Required due to the way Git works, without it this action won't be able to find any or the correct tags
+        - name: store_tag
+          id: new_tag
+          uses: "WyriHaximus/github-action-get-previous-tag@v1"
+          with:
+            fallback: 1.0.0 # Optional fallback tag to use when no tag can be found
+
+  release:
+      # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    needs: tag
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+           
+      - name: create Release
+        id:  create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ needs.tag.outputs.new_tag }}
+          release_name: Release ${{ needs.tag.outputs.new_tag }}
+          draft: false
+          prerelease: false
+
+  latex:
+    runs-on: ubuntu-latest
+    needs: [tag, release]
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: compiling latex
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: classic/main.tex
+          
+      - name: rename pdf
+        run: mv main.pdf main-${{ needs.tag.outputs.new_tag }}.pdf
+
+      - name: publish pdf
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.tag.outputs.new_tag }}
+          files: main-${{ needs.tag.outputs.new_tag }}.pdf

@@ -39,6 +39,19 @@
 %we use utf8 since we want to build from any machine
 \usepackage[utf8]{inputenc}		
 
+\usepackage{hyperref}
+
+\makeatletter
+\hypersetup{
+	%pagebackref=true,
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=black,          	% color of internal links
+	citecolor=black,        		% color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=black,
+	bookmarksdepth=4
+}
+\makeatother
 %----------------------------------------------------------------------------------------
 %	LOGIC
 %----------------------------------------------------------------------------------------
@@ -241,7 +254,7 @@
 \newcommand{\cvevent}[4]
 {
 
-\begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
+\begin{tabular*}{1\textwidth}{p{15cm}  x{2.5cm}}
 	\textbf{#2} - \textcolor{bgcol}{#3} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
 \end{tabular*}
 
@@ -311,8 +324,8 @@
 %----------------------------------------------------------------------------------------
 \vspace{-8pt}
 \begin{center}
-	\HUGE \textsc{Jan Küster} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
-	\small Consultant and Software Developer
+	\HUGE \textsc{Paulo Fylippe Sell} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
+	
 \end{center}
 
 
@@ -323,10 +336,10 @@
 %---------------------------------------------------------------------------------------
 %	META SECTION
 %----------------------------------------------------------------------------------------
-\metasection{Bremen, Germany}{\textbf{Status:} M.Sc. Digital Media, Scientific Employee}
-\metasection{www.jankuester.com}{\textbf{Fields:} Software Engineering, Consulting, Scrum, Usability} 
-\metasection{info@jankuester.com}{\textbf{Techs:} Meteor, Javascript, Mongo,. Bootstrap, Bash, Git, Webstorm}
-\metasection{+49 176 *** *** **}{\textbf{Activities:} Global Game Jam, Open Source, Fitness}
+\metasection{Santa Catarina, Brazil}{\textbf{Status:} Telecommunications Engineer}
+\metasection{paulosell.github.io}{\textbf{Fields:} Embedded Systems, Hardware Acceleration, Signal Processing}
+\metasection{sellpaulof@gmail.com}{\textbf{Techs:} C/C++, Python, VHDL, Matlab, Java, Git}
+\metasection{+55 48 984053102}{\textbf{Activities:} Games, Reading, Coding, Investing}
 \vspace{-2pt}
 \textcolor{softcol}{\hrule}
 \vspace{6pt}
@@ -338,8 +351,7 @@
 %----------------------------------------------------------------------------------------
 \vspace{-6pt}
 \cvsection{Summary}
-Digital media graduate with project experience in the field of technology based assessment. Currently working as IT Consultant at We4IT, Bremen in the field of IBM Notes Domino and XPages applications. Master studies focused on teams from different disciplines and cultural backgrounds on solutions for complex problems.\\
-
+I am a Telecommunications engineer based in Santa Catarina, Brazil. I graduated from the Federal Institute of Santa Catarina and my bachelor's thesis involved developing a framework for secure and reliable firmware updates for microcontroller-based embedded devices. Currently, I am pursuing a master's degree in Applied Computer Science at the University of Vale do Itajaí (UNIVALI), specializing in Embedded Systems. My research will be centered around improving energy efficiency and enhancing throughput in FPGA-based hardware accelerators for deep neural networks.\\
 
 %============================================================================%
 %
@@ -350,79 +362,62 @@ Digital media graduate with project experience in the field of technology based 
 %---------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
+\vspace{-0.25cm}
 \cvsection{Experience}
 
-\cvevent{2016 - present}{Scientific Employee / PhD Student}{University of Bremen}{
-	{Develop and evaluate the next generation learning management system with Meteor},
-	{Define a new level of software for classroom management based on an extensive nursing curriculum.}
+\cvevent{2022 - present}{Product Development Analyst}{Intelbras}{
+	{Responsible for the backend development of embedded code in home \& office routers, including implementing new product features, managing device behaviors, and providing real-time device status information through REST APIs and MQTT broker in Linux-based embedded solutions.},
+	{Mostly used C and Shell.}
 }
 
+\cvevent{2021 - 2022}{Software Developer / Reseacher}{Federal Institute of Santa Catarina}{
+	{Developing technical specifications and requirements for a Fiscal Authorization Device (DAF) for Electronic Consumer Invoice (NFC-e) usage in Santa Catarina. Tasks included secure hardware study, API and communication protocol writing, firmware development, DAF integration with complementary software, and contributing to DAF certification rules.},
+	{Mostly used C/C++ and Python.}
+}
 %
-\cvevent{2014 - 2016}{IT Consultant for IBM XPages and Notes Domino}{We4IT GmbH Bremen}{
-	{Realize projects in XPages and We4IT Aveedo, monitor project status, conduct reports},
-	{Implement the frontend for a BPMN compatible engine within We4IT Aveedo}
-}
-
-%\textcolor{softcol}{\hrule}
-
-%
-\cvevent{2012 - 2014}{Scientific Employee / Software Development}{University of Bremen}{
-	{Invented a flexible assessment framework, targeting industrial trainees},
-	{Supervised software development lifecycle, Recruited team members}
-}
-
-%\textcolor{softcol}{\hrule}
-
-%
-\cvevent{2011 / 11}{Project Management Simulation Training}{Getoq Consulting}{
-	{Performed a two-day project simulation from management perspective},
-	{Topics included customer contracts, change management, controlling, operational tasks}
-}
-
-%\textcolor{softcol}{\hrule}
-
-
-%
-\cvevent{2010 - 2011}{Student Assistant / Programmer}{otulea.uni-bremen.de}{
-	{Realized an online diagnosis platform for workforce literacy development (Flex)},
-	{Modeled software design, implemented various prototypes, conducted usability tests}
-}
-
-
 %---------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %--------------------------------------------------------------------------------------
+\vspace{-0.25cm}
 \cvsection{Education}
 
-\cvevent{2015 / 07}{Graduated as M.Sc. Digital Media}{University of Bremen}{
-	{Master Thesis: Semi Automated Scoring in Technology Based Assessment},
-	{Developed and evaluated an algorithm for semi automated scoring of spreadsheet data}
+\cvevent{2023 - present}{Master's degree in Applied Computer Science}{University of Vale do Itajaí }{
+	{Specialization in Embedded Systems.},
+	{Energy efficiency improvement and throughput enhancement in FPGA-based hardware accelerators for deep neural networks.}
 }
+
+\cvevent{2015 - 2021}{Bachelor's degree in Telecommunications Engineering}{Federal Institute of Santa Catarina}{
+	{Development of a framework for secure and reliable firmware update for microcontroller-based embedded devices.},
+	{
+		Award for \href{https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/17354/17192}{best full paper} at the 15th Workshop on Scientific Initiation and Undergraduate Research (WTICG) of the 21st Brazilian Symposium on Information Security and Computer Systems (SBSeg 2021).
+	}
+}
+
+% \cvevent{2011 - 2014}{Vocational High School}{Federal Institute of Santa Catarina}{
+% 	{Telecommunications technician}
+% }
+\vspace{-0.25cm}
+\cvsection{Academic Experience}
+
+\cvevent{2020 - 2021}{Research Student}{Federal Institute of Santa Catarina}{
+	{Development of the specification and the proof of concept of an embedded low-cost secure fiscal authorizing device for the state of Santa Catarina.}
+}
+
+\cvevent{2019 - 2019}{Research Student}{Federal Institute of Santa Catarina}{
+	{Development of a DSP block for an Modified Discrete Cosine Transform (MDCT).
+}}
+
+\cvevent{2018 - 2019}{Teaching assistant}{Federal Institute of Santa Catarina}{Teaching assistant for subjects related to electrical circuits and electronics.}
+
+\vspace{-0.25cm}
+\cvsection{Fields of Knowledge}
+
+$\cdot$  Embedded systems, wireless communication, protocol design, deep neural networks, RF, electric circuits, telecommunication systems, distributed systems.
+
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2012 - 2013}{Master Project - PrIMA}{University of Bremen}{
-	{Co-Invented a touch table application for medical support, co-developed software (Java)},
-	{Formed a scrum team, mainted project dev server (Debian), surveyed target audience}
-}
-
-%\textcolor{softcol}{\hrule}
-
-%
-\cvevent{2012 - 2015}{Master Studies Digital Media}{University of Bremen}{
-	{Inter-cultural classes in English, covering special topics in computer science and design},
-	{Professionalized in research methods, software development and e-assessment}
-}
-
-%\textcolor{softcol}{\hrule}
-
-%
-\cvevent{2009 - 2010}{Semester Abroad}{University of Melbourne}{
-	{Mastered six months of study and trans-cultural experience in Melbourne, Australia},
-	{Finished machine programming, information visualization, professional essay writing}
-}
-
 
 %--------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
@@ -430,7 +425,7 @@ Digital media graduate with project experience in the field of technology based 
 
 \null
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{www.jankuester.com} $\cdot$ \textcolor{sectcol}{github.com/jankapunkt}}}}
+\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  {\href{https://paulosell.github.io/}{\textnormal{\textcolor{sectcol}p\textcolor{sectcol}a\textcolor{sectcol}u\textcolor{sectcol}l\textcolor{sectcol}o\textcolor{sectcol}s\textcolor{sectcol}e\textcolor{sectcol}l\textcolor{sectcol}l\textcolor{sectcol}.\textcolor{sectcol}g\textcolor{sectcol}i\textcolor{sectcol}t\textcolor{sectcol}h\textcolor{sectcol}u\textcolor{sectcol}b\textcolor{sectcol}.\textcolor{sectcol}i\textcolor{sectcol}o}} $\cdot$ \href{https://github.com/paulosell}{\textnormal{\textcolor{sectcol}g\textcolor{sectcol}i\textcolor{sectcol}t\textcolor{sectcol}h\textcolor{sectcol}u\textcolor{sectcol}b\textcolor{sectcol}.\textcolor{sectcol}c\textcolor{sectcol}o\textcolor{sectcol}m\textcolor{sectcol}/\textcolor{sectcol}p\textcolor{sectcol}a\textcolor{sectcol}u\textcolor{sectcol}l\textcolor{sectcol}o\textcolor{sectcol}s\textcolor{sectcol}e\textcolor{sectcol}l\textcolor{sectcol}l}}}}}
 
 
 
