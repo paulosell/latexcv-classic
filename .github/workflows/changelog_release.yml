@@ -1,0 +1,48 @@
+# This is a basic workflow to help you get started with the GitHub Auto-Release on Commit Action.
+
+name: AutoRelease
+
+on:
+  push:
+    branches: [ new_release_strategy ]
+
+permissions: write-all
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  tag:
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: 
+          - 12
+      outputs:
+        new_tag: ${{ steps.new_tag.outputs.tag }}
+      steps: 
+        - uses: phish108/autotag-action@v1.1.55
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            with-v: true
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0 # Required due to the way Git works, without it this action won't be able to find any or the correct tags
+        - name: store_tag
+          id: new_tag
+          uses: "WyriHaximus/github-action-get-previous-tag@v1"
+          with:
+            fallback: 1.0.0 # Optional fallback tag to use when no tag can be found
+  # This workflow contains a single job called "build"
+  release:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+      - uses: CupOfTea696/gh-action-auto-release@v1.0.0
+        with:
+          title: "Release: ${{ needs.tag.outputs.new_tag }}"
+          tag: "${{ needs.tag.outputs.new_tag }}"
+          draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
