@@ -44,5 +44,6 @@ jobs:
           title: "Release: ${{ needs.tag.outputs.new_tag }}"
           tag: "${{ needs.tag.outputs.new_tag }}"
           draft: false
+          regex: "/^Release: #{semver}$/i"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
