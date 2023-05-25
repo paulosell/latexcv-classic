@@ -44,6 +44,6 @@ jobs:
           title: "Release: ${{ needs.tag.outputs.new_tag }}"
           tag: "${{ needs.tag.outputs.new_tag }}"
           draft: false
-          regex: "(?<=^|[^a-zA-Z0-9.+-])(?=[^a-zA-Z0-9.+-])"
+          regex: ".*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
