@@ -254,11 +254,30 @@
 \newcommand{\cvevent}[4]
 {
 
-\begin{tabular*}{1\textwidth}{p{15cm}  x{2.5cm}}
+\begin{tabular*}{1\textwidth}{p{13cm}  x{4.5cm}}
 	\textbf{#2} - \textcolor{bgcol}{#3} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
 \end{tabular*}
 
 \vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+
+	\foreach \desc in {#4}{
+		$\cdot$ \desc\\[3pt]
+	}
+	
+\vspace{3pt}
+}
+
+
+\newcommand{\cveventextra}[4]
+{
+
+\begin{tabular*}{1\textwidth}{p{13cm}  x{4.5cm}}
+	\textbf{#2} - \textcolor{bgcol}{#3} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
+\end{tabular*}
+
+\vspace{-4pt}
 \textcolor{softcol}{\hrule}
 \vspace{6pt}
 
@@ -387,7 +406,7 @@ I am a Telecommunications engineer based in Santa Catarina, Brazil. I graduated 
 	{Energy efficiency improvement and throughput enhancement in FPGA-based hardware accelerators for deep neural networks.}
 }
 
-\cvevent{2015 - 2021}{Bachelor's degree in Telecommunications Engineering}{Federal Institute of Santa Catarina}{
+\cveventextra{2015 - 2021}{Bachelor's degree in Telecommunications Engineering}{Federal Institute of Santa Catarina}{
 	{Development of a framework for secure and reliable firmware update for microcontroller-based embedded devices.},
 	{
 		Award for \href{https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/17354/17192}{best full paper} at the 15th Workshop on Scientific Initiation and Undergraduate Research (WTICG) of the 21st Brazilian Symposium on Information Security and Computer Systems (SBSeg 2021).

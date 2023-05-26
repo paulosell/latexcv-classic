@@ -269,6 +269,24 @@
 \vspace{3pt}
 }
 
+\newcommand{\cveventextra}[4]
+{
+
+\begin{tabular*}{1\textwidth}{p{13cm}  x{4.5cm}}
+	\textbf{#2} - \textcolor{bgcol}{#3} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
+\end{tabular*}
+
+\vspace{-4pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+
+	\foreach \desc in {#4}{
+		$\cdot$ \desc\\[3pt]
+	}
+	
+\vspace{3pt}
+}
+
 % creates a stretched box as 
 \newcommand{\cveventmeta}[2]
 {
@@ -387,7 +405,7 @@ Eu sou um engenheiro de Telecomunicações que vive em São José, Santa Catarin
 	{Melhoria da eficiência energética e aumento da taxa de transferência em aceleradores de hardware baseados em FPGA para redes neurais profundas.}
 }
 
-\cvevent{2015 - 2021}{Graduação em engenharia de telecomunicações}{Instituto Federal de Santa Catarina}{
+\cveventextra{2015 - 2021}{Graduação em engenharia de telecomunicações}{Instituto Federal de Santa Catarina}{
 	{Desenvolvimento de um framework para atualização segura e confiável de firmware para dispositivos embarcados baseados em microcontroladores.},
 	{
 		Prêmio de \href{https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/17354/17192}{melhor artigo completo} no 15º Workshop de Iniciação Científica e Pesquisa de Graduação (WTICG) do 21º Simpósio Brasileiro em Segurança da Informação e Sistemas Computacionais (SBSeg 2021).
