@@ -73,7 +73,7 @@ jobs:
       - name: compiling latex in portuguese
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: classic/main.tex
+          root_file: classic/main-pt.tex
           
       - name: rename pdf
         run: mv main.pdf resume-ptbr-${{ needs.tag.outputs.new_tag }}.pdf
