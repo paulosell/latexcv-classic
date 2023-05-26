@@ -76,7 +76,7 @@ jobs:
           root_file: classic/main-pt.tex
           
       - name: rename pdf
-        run: mv main.pdf resume-ptbr-${{ needs.tag.outputs.new_tag }}.pdf
+        run: mv main-pt.pdf resume-ptbr-${{ needs.tag.outputs.new_tag }}.pdf
 
       - name: publish pdf
         uses: softprops/action-gh-release@v1
