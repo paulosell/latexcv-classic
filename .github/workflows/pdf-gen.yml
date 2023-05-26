@@ -56,16 +56,30 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v3
 
-      - name: compiling latex
+      - name: compiling latex in english
         uses: xu-cheng/latex-action@v2
         with:
           root_file: classic/main.tex
           
       - name: rename pdf
-        run: mv main.pdf main-${{ needs.tag.outputs.new_tag }}.pdf
+        run: mv main.pdf resume-en${{ needs.tag.outputs.new_tag }}.pdf
 
       - name: publish pdf
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ needs.tag.outputs.new_tag }}
-          files: main-${{ needs.tag.outputs.new_tag }}.pdf
+          files: resume-en-${{ needs.tag.outputs.new_tag }}.pdf
+
+      - name: compiling latex in portuguese
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: classic/main.tex
+          
+      - name: rename pdf
+        run: mv main.pdf resume-ptbr-${{ needs.tag.outputs.new_tag }}.pdf
+
+      - name: publish pdf
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.tag.outputs.new_tag }}
+          files: resume-ptbr-${{ needs.tag.outputs.new_tag }}.pdf
