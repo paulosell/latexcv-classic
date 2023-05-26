@@ -62,7 +62,7 @@ jobs:
           root_file: classic/main.tex
           
       - name: rename pdf
-        run: mv main.pdf resume-en${{ needs.tag.outputs.new_tag }}.pdf
+        run: mv main.pdf resume-en-${{ needs.tag.outputs.new_tag }}.pdf
 
       - name: publish pdf in english
         uses: softprops/action-gh-release@v1
