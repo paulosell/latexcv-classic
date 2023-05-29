@@ -94,7 +94,7 @@
 \usepackage[a4paper]{geometry}		
 
 % for example, change the margins to 2 inches all round
-\geometry{top=1.25cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+\geometry{top=1cm, bottom=1cm, left=1.5cm, right=1.5cm} 	
 
 %use customized header
 \usepackage{fancyhdr}				
@@ -223,11 +223,20 @@
 % create a coloured box with arrow and title as cv section headline
 % param 1: section title
 %
+
+\newcommand{\eventspace}{
+	\vspace{0.05cm}
+}
+
+\newcommand{\sectionspace}{
+	\vspace{0.1cm}
+}
 \newcommand{\cvsection}[1]
 {
 	\begin{center}
 		\large\textcolor{sectcol}{\textbf{#1}}
 	\end{center}
+	\sectionspace
 }
 
 %create a coloured arrow with title as cv meta section section
@@ -266,7 +275,7 @@
 		$\cdot$ \desc\\[3pt]
 	}
 	
-\vspace{3pt}
+\eventspace
 }
 
 
@@ -285,7 +294,7 @@
 		$\cdot$ \desc\\[3pt]
 	}
 	
-\vspace{3pt}
+\eventspace
 }
 
 % creates a stretched box as 
@@ -358,7 +367,7 @@
 \metasection{Santa Catarina, Brazil}{\textbf{Status:} Telecommunications Engineer}
 \metasection{paulosell.github.io}{\textbf{Fields:} Embedded Systems, Hardware Acceleration, Signal Processing}
 \metasection{sellpaulof@gmail.com}{\textbf{Techs:} C/C++, Python, VHDL, Matlab, Java, Git}
-\metasection{+55 48 984053102}{\textbf{Activities:} Games, Reading, Coding, Investing}
+\metasection{+55 48 984053102}{}
 \vspace{-2pt}
 \textcolor{softcol}{\hrule}
 \vspace{6pt}
@@ -381,7 +390,7 @@ Telecommunications Engineer living in Santa Catarina, Brazil. Graduated from the
 %---------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
-\vspace{-0.25cm}
+
 \cvsection{Experience}
 
 \cvevent{feb 2022 - present}{Product Development Analyst}{Intelbras}{
@@ -402,7 +411,7 @@ Telecommunications Engineer living in Santa Catarina, Brazil. Graduated from the
 %---------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %--------------------------------------------------------------------------------------
-\vspace{-0.25cm}
+
 \cvsection{Education}
 
 \cvevent{2023 - present}{Master's degree in Applied Computer Science}{University of Vale do Itajaí }{
@@ -420,7 +429,7 @@ Telecommunications Engineer living in Santa Catarina, Brazil. Graduated from the
 % \cvevent{2011 - 2014}{Vocational High School}{Federal Institute of Santa Catarina}{
 % 	{Telecommunications technician}
 % }
-\vspace{-0.25cm}
+\newpage
 \cvsection{Academic Experience}
 
 \cvevent{2020 - 2021}{Research Student}{Federal Institute of Santa Catarina}{
@@ -432,7 +441,7 @@ Telecommunications Engineer living in Santa Catarina, Brazil. Graduated from the
 	{Mostly used Matlab and VHDL}}
 
 
-\vspace{-0.25cm}
+
 \cvsection{Fields of Knowledge}
 
 $\cdot$  Embedded systems, wireless communication, protocol design, deep neural networks, RF, electric circuits, telecommunication systems, distributed systems.

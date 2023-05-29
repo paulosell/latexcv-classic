@@ -94,7 +94,7 @@
 \usepackage[a4paper]{geometry}		
 
 % for example, change the margins to 2 inches all round
-\geometry{top=1.25cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+\geometry{top=1cm, bottom=1cm, left=1.5cm, right=1.5cm} 	
 
 %use customized header
 \usepackage{fancyhdr}				
@@ -223,11 +223,21 @@
 % create a coloured box with arrow and title as cv section headline
 % param 1: section title
 %
+
+\newcommand{\eventspace}{
+	\vspace{0.05cm}
+}
+
+\newcommand{\sectionspace}{
+	\vspace{0.1cm}
+}
+
 \newcommand{\cvsection}[1]
 {
 	\begin{center}
 		\large\textcolor{sectcol}{\textbf{#1}}
 	\end{center}
+	\sectionspace
 }
 
 %create a coloured arrow with title as cv meta section section
@@ -266,7 +276,7 @@
 		$\cdot$ \desc\\[3pt]
 	}
 	
-\vspace{3pt}
+\eventspace
 }
 
 \newcommand{\cveventextra}[4]
@@ -284,7 +294,7 @@
 		$\cdot$ \desc\\[3pt]
 	}
 	
-\vspace{3pt}
+\eventspace
 }
 
 % creates a stretched box as 
@@ -357,7 +367,7 @@
 \metasection{paulosell.github.io}{\textbf{Áreas:} 
 Sistemas embarcados, Acelerador em hardware, Processamento de sinais}
 \metasection{sellpaulof@gmail.com}{\textbf{Techs:} C/C++, Python, VHDL, Matlab, Java, Git}
-\metasection{+55 48 984053102}{\textbf{Atividades:} Jogos, Leitura, Investimentos}
+\metasection{+55 48 984053102}{}
 \vspace{-2pt}
 \textcolor{softcol}{\hrule}
 \vspace{6pt}
@@ -380,7 +390,6 @@ Engenheiro de Telecomunicações morador da cidade de São José, Santa Catarina
 %---------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
-\vspace{-0.15cm}
 \cvsection{Experiências profissionais}
 
 \cvevent{fev 2022 - presente}{Analista de desenvolvimento de produto}{Intelbras}{
@@ -401,7 +410,7 @@ Engenheiro de Telecomunicações morador da cidade de São José, Santa Catarina
 %---------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %--------------------------------------------------------------------------------------
-\vspace{-0.5cm}
+
 \cvsection{Educação}
 
 \cvevent{2023 - presente}{Mestrado em computação aplicada}{Universidade do Vale do Itajaí }{
@@ -419,7 +428,7 @@ Engenheiro de Telecomunicações morador da cidade de São José, Santa Catarina
 % \cvevent{2011 - 2014}{Vocational High School}{Federal Institute of Santa Catarina}{
 % 	{Telecommunications technician}
 % }
-\vspace{-0.25cm}
+\newpage
 \cvsection{Experiências acadêmicas}
 
 \cvevent{2020 - 2021}{Projeto de pesquisa}{Instituto Federal de Santa Catarina}{
@@ -431,7 +440,7 @@ Engenheiro de Telecomunicações morador da cidade de São José, Santa Catarina
 	{Uso de Matlab e VHDL para o desenvolvimento do bloco e sintetização em hardware.}}
 
 
-\vspace{-0.25cm}
+
 \cvsection{Áreas de conhecimento}
 
 $\cdot$  Sistemas embarcados, comunicação sem fio, projeto de protocolos, redes neurais profundas, RF, circuitos elétricos, sistemas de telecomunicações, sistemas distribuídos.
