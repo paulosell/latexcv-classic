@@ -45,7 +45,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
           tag_name: ${{ needs.tag.outputs.new_tag }}
-          release_name: Release ${{ needs.tag.outputs.new_tag }}
+          release_name: Resume Paulo Sell ${{ needs.tag.outputs.new_tag }}
           draft: false
           prerelease: false
 
@@ -62,13 +62,13 @@ jobs:
           root_file: classic/main.tex
           
       - name: rename pdf
-        run: mv main.pdf resume-en-${{ needs.tag.outputs.new_tag }}.pdf
+        run: mv main.pdf resume-paulo-sell-en-${{ needs.tag.outputs.new_tag }}.pdf
 
       - name: publish pdf in english
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ needs.tag.outputs.new_tag }}
-          files: resume-en-${{ needs.tag.outputs.new_tag }}.pdf
+          files: resume-paulo-sell-en-${{ needs.tag.outputs.new_tag }}.pdf
 
       - name: compiling latex in portuguese
         uses: xu-cheng/latex-action@v2
@@ -76,10 +76,10 @@ jobs:
           root_file: classic/main-pt.tex
           
       - name: rename pdf in
-        run: mv main-pt.pdf resume-ptbr-${{ needs.tag.outputs.new_tag }}.pdf
+        run: mv main-pt.pdf resume-paulo-sell-ptbr-${{ needs.tag.outputs.new_tag }}.pdf
 
       - name: publish pdf in pt-br
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ needs.tag.outputs.new_tag }}
-          files: resume-ptbr-${{ needs.tag.outputs.new_tag }}.pdf
+          files: resume-paulo-sell-ptbr-${{ needs.tag.outputs.new_tag }}.pdf
